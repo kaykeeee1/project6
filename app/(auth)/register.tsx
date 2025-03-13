@@ -74,10 +74,14 @@ export default function Register() {
             ]}
             onPress={() => setUserType('client')}
           >
-            <Text style={[
-              styles.userTypeText,
-              userType === 'client' && styles.userTypeTextActive,
-            ]}>Cliente</Text>
+            <Text
+              style={[
+                styles.userTypeText,
+                userType === 'client' && styles.userTypeTextActive,
+              ]}
+            >
+              Cliente
+            </Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={[
@@ -87,21 +91,25 @@ export default function Register() {
             onPress={() => setUserType('provider')}
           >
             <Scissors size={16} color={userType === 'provider' ? '#fff' : '#666'} />
-            <Text style={[
-              styles.userTypeText,
-              userType === 'provider' && styles.userTypeTextActive,
-            ]}>Prestador de Serviço</Text>
+            <Text
+              style={[
+                styles.userTypeText,
+                userType === 'provider' && styles.userTypeTextActive,
+              ]}
+            >
+              Prestador de Serviço
+            </Text>
           </TouchableOpacity>
         </View>
 
         <TouchableOpacity
           style={styles.button}
-          onPress={() => router.replace('/(tabs)')}
+          onPress={() => router.replace('./(tabs)')}
         >
           <Text style={styles.buttonText}>Cadastrar</Text>
         </TouchableOpacity>
 
-        <Link href="/(auth)/login" asChild>
+        <Link href="./(auth)/login" asChild>
           <TouchableOpacity style={styles.loginLink}>
             <Text style={styles.loginText}>Já tem uma conta? Faça login</Text>
           </TouchableOpacity>
@@ -117,7 +125,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   content: {
-    padding: 24,
+    flexGrow: 1,  // Isso vai fazer o conteúdo ocupar o máximo possível de espaço
+    justifyContent: 'center',  // Centraliza verticalmente
+    paddingHorizontal: 24,
   },
   header: {
     alignItems: 'center',
